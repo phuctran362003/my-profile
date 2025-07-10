@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import { Hero } from "@/components/sections/Hero"
 import { About } from "@/components/sections/About"
 import { Skills } from "@/components/sections/Skills"
@@ -8,9 +9,9 @@ import { Experience } from "@/components/sections/Experience"
 import { Projects } from "@/components/sections/Projects"
 import { Contact } from "@/components/sections/Contact"
 
-export default function Home() {
+const Home: React.FC = () => {
   return (
-    <div className="space-y-16 md:space-y-20">
+    <main className="space-y-16 md:space-y-20">
       <Hero />
       <About />
       <Skills />
@@ -18,6 +19,8 @@ export default function Home() {
       <Experience />
       <Projects />
       <Contact />
-    </div>
+    </main>
   )
 }
+
+export default Home;

@@ -5,11 +5,11 @@ import Image from "next/image"
 
 export function Hero() {
   return (
-    <section className="flex flex-col items-center text-center space-y-8 py-20 md:py-32">
+    <section className="flex flex-col items-center text-center space-y-6 py-12 md:py-20">
       {/* Avatar */}
       <div className="relative">
         <div className="absolute -inset-1 rounded-full bg-yellow-400/20 blur" />
-        <div className="relative h-32 w-32 overflow-hidden rounded-full border-2 border-yellow-400/30">
+        <div className="relative h-28 w-28 overflow-hidden rounded-full border-2 border-yellow-400/30">
           <Image
             src="https://avatars.githubusercontent.com/u/108740308?v=4"
             alt="phucdev"
@@ -21,7 +21,7 @@ export function Hero() {
       </div>
 
       {/* Title */}
-      <div className="space-y-4">
+      <div className="space-y-3">
         <h1 className="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl">
           phucdev
         </h1>
@@ -32,7 +32,7 @@ export function Hero() {
       </div>
 
       {/* CTA Buttons */}
-      <div className="flex items-center gap-4 pt-4">
+      <div className="flex items-center gap-4 pt-2">
         <a
           href="/CV_TRANGIAPHUC.pdf"
           download
