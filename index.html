@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Portfolio | terminal Welcome to my portfolio! — Type help for a list of supported commands." />
+  <meta name="keywords" content="phuc, trangiaphuc, portfolio, HTML, CSS, .NET, DevOps, terminal-portfolio" />
+  <meta name="author" content="Tran Gia Phuc" />
+  <link rel="shortcut icon" href="src/assets/favicon.png" type="image/x-icon" />
+  <link href="src/styles.css" rel="stylesheet" />
+  <link href="src/App.css" rel="stylesheet" />
+  <link href="src/index.css" rel="stylesheet" />
+  <link href="src/assets/fonts/FantasqueSansMono-Regular-decl.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://kit.fontawesome.com" crossorigin />
+  <link rel="preload" href="src/assets/cat.webp" as="image" />
+  <script src="https://kit.fontawesome.com/39565093f3.js" crossorigin="anonymous" defer></script>
+  <script>
+    function close_window() {
+      if (confirm("Close Window?")) {
+        window.location.href = "about:blank";
+      }
+    }
+  </script>
+  <title>Tran Gia Phuc - .NET Developer & DevOps Engineer</title>
+</head>
+
+<body>
+  <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+    <i class="fas fa-adjust"></i>
+  </button>
+
+  <button class="scroll-indicator" onclick="scrollToTop()" aria-label="Scroll to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <div class="terminal-window" role="main">
+    <header role="banner" aria-label="Site Header">
+      <a href="https://github.com/phuctran362003" target="_blank" aria-label="GitHub Profile">
+        <i class="fa-brands fa-github header-icon github-icon" aria-hidden="true"></i>
+      </a>
+
+      <div class="centered" aria-hidden="true">
+        <span>phuc@terminal</span>
+      </div>
+
+      <a href="#" onclick="close_window(); return false;" aria-label="Close Window">
+        <i class="fa-solid fa-circle-xmark header-icon close-icon" aria-hidden="true"></i>
+      </a>
+    </header>
+
+    <hr aria-hidden="true" />
+
+    <div id="contentscroll" class="content-container">
+      <div class="ascii-Hero" role="presentation" aria-hidden="true">
+        <pre class="ascii">
+█▀█ █░█ █░█ █▀▀
+█▀▀ █▀█ █▄█ █▄▄
+            </pre>
+        <div class="avatar-container">
+          <img src="https://avatars.githubusercontent.com/u/108740308?v=4" alt="Tran Gia Phuc's avatar"
+            class="profile-avatar" onerror="this.src='src/assets/cat.webp'" />
+          <div class="avatar-overlay">
+            <div class="avatar-social-links">
+              <a href="https://github.com/phuctran362003" target="_blank" aria-label="GitHub Profile">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="mailto:trangiaphuc362003181@gmail.com" aria-label="Email me">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+              <a href="tel:+84393734206" aria-label="Call me">
+                <i class="fa-solid fa-phone"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="profile-info" aria-labelledby="profile-heading">
+        <h1 id="profile-heading" class="sr-only">Profile Information</h1>
+
+        <div class="info-item">
+          <div class="name">
+            <i class="fa-solid fa-address-card" aria-hidden="true"></i>
+            <span>Tran Gia Phuc</span>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
+          <span>Role</span>
+          <span class="link-text">.NET Developer & DevOps Engineer</span>
+        </div>
+
+        <div class="info-item">
+          <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          <span>Email</span>
+          <a href="mailto:trangiaphuc362003181@gmail.com" class="link-text" aria-label="Email me">→
+            &nbsp;trangiaphuc362003181@gmail.com</a>
+        </div>
+
+        <div class="info-item">
+          <i class="fa-solid fa-phone" aria-hidden="true"></i>
+          <span>Phone</span>
+          <a href="tel:+84393734206" class="link-text" aria-label="Call me">→ &nbsp;+84-393734206</a>
+        </div>
+
+        <div class="info-item">
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
+          <span>GitHub</span>
+          <a href="https://github.com/phuctran362003" class="link-text" target="_blank"
+            aria-label="GitHub phuctran362003">→ &nbsp;github/phuctran362003</a>
+        </div>
+
+        <div class="info-item">
+          <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+          <span>Education</span>
+          <span class="link-text">FPT University, Ho Chi Minh (GPA: 7.0)</span>
+        </div>
+
+        <div class="info-item">
+          <i class="fa-solid fa-code-branch" aria-hidden="true"></i>
+          <span>Experience</span>
+          <span class="link-text">FPT Software Ho Chi Minh - .NET Developer</span>
+        </div>
+
+        <div class="info-item">
+          <i class="fa-solid fa-laptop-code" aria-hidden="true"></i>
+          <span>Technical Skills</span>
+          <div class="skills-list">
+            <span class="skill-item">.NET Core (20 months)</span>
+            <span class="skill-item">C# (20 months)</span>
+            <span class="skill-item">Entity Framework</span>
+            <span class="skill-item">RESTful API</span>
+            <span class="skill-item">GraphQL</span>
+            <span class="skill-item">PostgreSQL</span>
+            <span class="skill-item">SQL Server</span>
+            <span class="skill-item">Redis</span>
+            <span class="skill-item">Docker</span>
+            <span class="skill-item">Git</span>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <h3>BlindTreasure - E-commerce and Mystery Box Platform</h3>
+          <div class="project-details">
+            <p><strong>Role:</strong> Back-End Developer / DevOps Engineer / Team Leader</p>
+            <p><strong>Duration:</strong> April 2025 - Present</p>
+            <p><strong>Team Size:</strong> 4</p>
+            <p><strong>Description:</strong> Developed a B2B2C e-commerce platform integrating mystery shopping (blind
+              box) mechanics supporting admin, seller, staff, and customer roles, ensuring transparent drop rates,
+              inventory and resale marketplace management, direct discounting, and PCI DSS-compliant secure payment
+              processing.</p>
+            <p><strong>Technologies:</strong></p>
+            <ul>
+              <li>Backend: .NET, Docker, Redis</li>
+              <li>Frontend: NextJS</li>
+              <li>Storage: MinIO</li>
+              <li>Database: PostgreSQL</li>
+              <li>Others: Nginx, Stripe, Resend, Gemini</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <i class="fa-solid fa-diagram-project" aria-hidden="true"></i>
+          <span>Notable Projects</span>
+          <div class="projects-list">
+            <div class="project-item">
+              <strong>BlindTreasure</strong> - E-commerce and Mystery Box Platform
+              <p>B2B2C platform with mystery shopping mechanics, secure payment processing</p>
+              <small>Tech: .NET, NextJS, MinIO, Redis, PostgreSQL, Docker</small>
+            </div>
+            <div class="project-item">
+              <strong>ArWoh</strong> - Artwork High Quality Store
+              <p>Digital platform for high-quality artwork connecting artists worldwide</p>
+              <small>Tech: .NET, ReactJS, MinIO, GraphQL, MSSQL, Docker</small>
+            </div>
+            <div class="project-item">
+              <strong>VaccinaCare</strong> - Medical Vaccination Center
+              <p>Pediatric vaccination management system with automated reminders</p>
+              <small>Tech: .NET, ReactJS, GraphQL, MSSQL, Docker</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <i class="fa-solid fa-language" aria-hidden="true"></i>
+          <span>Languages</span>
+          <div class="language-list">
+            <span class="language-item">English: Upper-intermediate to Advanced</span>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <i class="fa-solid fa-award" aria-hidden="true"></i>
+          <span>Achievements</span>
+          <div class="achievements-list">
+            <span class="achievement-item">FPT Elympics - TOP 4 in English Competition (April 2022)</span>
+            <span class="achievement-item">Member of FPTU Developer Student Community</span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section id="terminal" aria-label="Terminal Emulator">
+      <a id="before"></a>
+
+      <div id="command" onclick="document.getElementById('texter').focus();">
+        <label for="texter" class="sr-only">Command Input</label>
+        <input type="text" id="texter" class="texter" aria-label="Command line input" onkeyup="typeIt(this, event)"
+          onkeydown="typeIt(this, event); moveIt(this.value.length, event)" onkeypress="typeIt(this, event);" />
+        <div id="liner">
+          <span id="typer" aria-live="polite"></span><b class="cursor" id="cursor" aria-hidden="true">█</b>
+          <div class="list" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="bottom-bar" role="contentinfo">
+    <div class="license-info">
+      <span>© 2024 Tran Gia Phuc. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <picture>
+    <source srcset="src/assets/cat.webp" type="image/webp" />
+    <img src="src/assets/cat.gif" id="cursor-cat-gif" alt="cursor-follower" loading="lazy" />
+  </picture>
+
+  <!-- Core JavaScript -->
+  <script src="src/js/theme.js"></script>
+  <script src="src/js/caret.js"></script>
+  <script src="src/js/cursor.js"></script>
+  <script src="src/js/commands.js"></script>
+  <script src="src/js/scroll.js"></script>
+  <script src="src/js/main.js"></script>
+
+  <!-- Initialize scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Initialize theme
+      initTheme();
+
+      // Initialize scroll functionality
+      const contentScroll = document.getElementById('contentscroll');
+      if (contentScroll) {
+        contentScroll.addEventListener('scroll', toggleScrollIndicator);
+      }
+
+      // Initialize command hover effects
+      addCommandHoverEffect();
+
+      // Initialize cursor follower
+      document.addEventListener('mousemove', (e) => {
+        requestAnimationFrame(() => moveGif(e.clientX, e.clientY));
+      });
+
+      // Initialize touch events for mobile
+      document.addEventListener('touchmove', throttledTouchMove);
+
+      // Initialize terminal
+      init();
+    });
+  </script>
+  </div>
+</body>
+
+</html>
