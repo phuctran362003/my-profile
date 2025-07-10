@@ -1,103 +1,250 @@
-import Image from "next/image";
+'use client';
+
+import { useState } from 'react';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Button } from '@/components/ui/button';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Badge } from '@/components/ui/badge';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { ScrollArea } from '@/components/ui/scroll-area';
+import { 
+  Code, 
+  Database, 
+  Server, 
+  Globe, 
+  Cpu, 
+  Briefcase, 
+  GraduationCap, 
+  FileText,
+  Mail,
+  Phone,
+  Github,
+  Download
+} from 'lucide-react';
+import SectionCard from '@/components/SectionCard';
 
 export default function Home() {
+  const [activeTab, setActiveTab] = useState('all');
+  
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Form handling logic
+  };
+  
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="space-y-8">
+      {/* Hero Section */}
+      <div className="flex flex-col items-center text-center space-y-4 py-12">
+        <Avatar className="w-24 h-24 border-2 border-primary">
+          <AvatarImage src="https://placehold.co/160x160/png" alt="Tran Gia Phuc" />
+          <AvatarFallback>TGP</AvatarFallback>
+        </Avatar>
+        
+        <div>
+          <h1 className="text-2xl font-bold tracking-tight text-primary">Tran Gia Phuc</h1>
+          <p className="text-muted-foreground mt-1">.NET Developer | DevOps Engineer</p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        
+        <div className="flex items-center gap-2">
+          <Button asChild size="sm" className="gap-2">
+            <a href="/CV_TRANGIAPHUC.pdf" download>
+              <Download className="h-4 w-4" /> Download CV
+            </a>
+          </Button>
+        </div>
+      </div>
+      
+      {/* About Section */}
+      <SectionCard id="about" title="About Me" icon={<FileText className="h-5 w-5" />}>
+        <p className="leading-relaxed">
+          <strong className="text-primary">Short-term goal:</strong> Become a .NET Developer and DevOps Engineer with solid backend skills and CI/CD expertise.<br />
+          <strong className="text-primary">Long-term goal:</strong> Become a Solution Architect designing large-scale secure systems with .NET & DevOps.
+        </p>
+      </SectionCard>
+      
+      {/* Skills Section */}
+      <SectionCard id="skills" title="Technical Skills" icon={<Code className="h-5 w-5" />}>
+        <Tabs defaultValue="programming" className="w-full">
+          <TabsList className="w-full grid grid-cols-3 mb-4">
+            <TabsTrigger value="programming">Programming</TabsTrigger>
+            <TabsTrigger value="technologies">Technologies</TabsTrigger>
+            <TabsTrigger value="soft">Soft Skills</TabsTrigger>
+          </TabsList>
+          
+          <TabsContent value="programming" className="space-y-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+              <Badge variant="outline" className="justify-start gap-1">
+                <Code className="h-3.5 w-3.5" /> C# (Intermediate)
+              </Badge>
+              <Badge variant="outline" className="justify-start gap-1">
+                <Code className="h-3.5 w-3.5" /> Java (Intermediate)
+              </Badge>
+              <Badge variant="outline" className="justify-start gap-1">
+                <Globe className="h-3.5 w-3.5" /> ReactJS (Beginner)
+              </Badge>
+              <Badge variant="outline" className="justify-start gap-1">
+                <Server className="h-3.5 w-3.5" /> ASP.NET Core
+              </Badge>
+            </div>
+          </TabsContent>
+          
+          <TabsContent value="technologies" className="space-y-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+              <Badge variant="outline" className="justify-start gap-1">
+                <Database className="h-3.5 w-3.5" /> PostgreSQL
+              </Badge>
+              <Badge variant="outline" className="justify-start gap-1">
+                <Database className="h-3.5 w-3.5" /> SQL Server
+              </Badge>
+              <Badge variant="outline" className="justify-start gap-1">
+                <Database className="h-3.5 w-3.5" /> Redis
+              </Badge>
+              <Badge variant="outline" className="justify-start gap-1">
+                <Cpu className="h-3.5 w-3.5" /> Docker
+              </Badge>
+              <Badge variant="outline" className="justify-start gap-1">
+                <Globe className="h-3.5 w-3.5" /> Azure
+              </Badge>
+              <Badge variant="outline" className="justify-start gap-1">
+                <Code className="h-3.5 w-3.5" /> Git
+              </Badge>
+              <Badge variant="outline" className="justify-start gap-1">
+                <Globe className="h-3.5 w-3.5" /> GraphQL
+              </Badge>
+            </div>
+          </TabsContent>
+          
+          <TabsContent value="soft" className="space-y-4">
+            <p className="text-sm text-muted-foreground">
+              English (Upper-intermediate to Advanced), Leadership, Problem-Solving, Communication, Planning
+            </p>
+          </TabsContent>
+        </Tabs>
+      </SectionCard>
+      
+      {/* Education Section */}
+      <SectionCard id="education" title="Education" icon={<GraduationCap className="h-5 w-5" />}>
+        <div className="space-y-4">
+          <div>
+            <h3 className="text-base font-semibold">FPT University, Ho Chi Minh</h3>
+            <p className="text-muted-foreground text-sm">Bachelor of Software Engineering (expected Aug 2025)</p>
+            <p className="text-sm mt-1">GPA: 7.0 (Oct 2021 - Present)</p>
+          </div>
+        </div>
+      </SectionCard>
+      
+      {/* Experience Section */}
+      <SectionCard id="experience" title="Work Experience" icon={<Briefcase className="h-5 w-5" />}>
+        <div className="space-y-4">
+          <div>
+            <h3 className="text-base font-semibold">FPT Software Ho Chi Minh</h3>
+            <p className="text-muted-foreground text-sm">On the job training .NET DEVELOPER (May 2024 - Aug 2024)</p>
+          </div>
+        </div>
+      </SectionCard>
+      
+      {/* Projects Section */}
+      <SectionCard id="projects" title="Projects" icon={<Server className="h-5 w-5" />}>
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+          <TabsList className="w-full grid grid-cols-2 mb-4">
+            <TabsTrigger value="all">All Projects</TabsTrigger>
+            <TabsTrigger value="featured">Featured</TabsTrigger>
+          </TabsList>
+          
+          <ScrollArea className="h-[260px] pr-4">
+            <div className="space-y-4">
+              <div className="p-3 border border-border rounded-md">
+                <div className="flex justify-between">
+                  <h3 className="font-semibold">BlindTreasure</h3>
+                  <Badge variant="outline" className="text-primary">04/2025 - Present</Badge>
+                </div>
+                <p className="text-sm text-muted-foreground mt-1">
+                  E-commerce & Mystery Box Platform (.NET, NextJS, Docker, Stripe, PostgreSQL)
+                </p>
+                <Badge className="mt-2" variant="secondary">Team Leader</Badge>
+              </div>
+              
+              <div className="p-3 border border-border rounded-md">
+                <div className="flex justify-between">
+                  <h3 className="font-semibold">ArWoh</h3>
+                  <Badge variant="outline" className="text-primary">01/2025 - 04/2025</Badge>
+                </div>
+                <p className="text-sm text-muted-foreground mt-1">
+                  Artwork High Quality Store (.NET, ReactJS, Docker, VNPay, MSSQL)
+                </p>
+                <Badge className="mt-2" variant="secondary">Team Leader</Badge>
+              </div>
+              
+              <div className="p-3 border border-border rounded-md">
+                <div className="flex justify-between">
+                  <h3 className="font-semibold">VaccinaCare</h3>
+                  <Badge variant="outline" className="text-primary">01/2025 - 04/2025</Badge>
+                </div>
+                <p className="text-sm text-muted-foreground mt-1">
+                  Medical Vaccination Center (.NET, ReactJS, Docker, GraphQL, MSSQL)
+                </p>
+                <Badge className="mt-2" variant="secondary">Team Leader</Badge>
+              </div>
+              
+              <div className="p-3 border border-border rounded-md">
+                <div className="flex justify-between">
+                  <h3 className="font-semibold">Cursus</h3>
+                  <Badge variant="outline" className="text-primary">05/2024 - 08/2024</Badge>
+                </div>
+                <p className="text-sm text-muted-foreground mt-1">
+                  Online Course Platform (.NET, Azure, Redis, Entity Framework, MSSQL)
+                </p>
+                <Badge className="mt-2" variant="secondary">Team Leader</Badge>
+              </div>
+            </div>
+          </ScrollArea>
+        </Tabs>
+      </SectionCard>
+      
+      {/* Contact Section */}
+      <SectionCard id="contact" title="Contact" icon={<Mail className="h-5 w-5" />}>
+        <div className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="flex items-center gap-2">
+              <Mail className="h-4 w-4 text-primary" />
+              <a href="mailto:trangiaphuc362003181@gmail.com" className="text-sm hover:text-primary transition-colors">
+                trangiaphuc362003181@gmail.com
+              </a>
+            </div>
+            <div className="flex items-center gap-2">
+              <Phone className="h-4 w-4 text-primary" />
+              <a href="tel:+84393734206" className="text-sm hover:text-primary transition-colors">
+                +84-393734206
+              </a>
+            </div>
+            <div className="flex items-center gap-2">
+              <Github className="h-4 w-4 text-primary" />
+              <a href="https://github.com/phuctran362003" target="_blank" rel="noopener noreferrer" className="text-sm hover:text-primary transition-colors">
+                phuctran362003
+              </a>
+            </div>
+          </div>
+          
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <label htmlFor="name" className="text-sm">Name</label>
+                <Input id="name" name="name" required />
+              </div>
+              <div className="space-y-2">
+                <label htmlFor="email" className="text-sm">Email</label>
+                <Input id="email" name="email" type="email" required />
+              </div>
+            </div>
+            <div className="space-y-2">
+              <label htmlFor="message" className="text-sm">Message</label>
+              <Textarea id="message" name="message" rows={4} required />
+            </div>
+            <Button type="submit" className="w-full">Send Message</Button>
+          </form>
+        </div>
+      </SectionCard>
     </div>
   );
 }
