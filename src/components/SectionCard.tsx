@@ -12,15 +12,15 @@ interface SectionCardProps {
 
 const SectionCard = ({ id, title, icon, children }: SectionCardProps) => {
   return (
-    <section id={id} className="py-4">
-      <Card className="section-card border border-border hover:border-primary/30 transition-colors">
-        <CardHeader className="flex flex-row items-center gap-2 pb-2">
-          {icon && <span className="text-primary">{icon}</span>}
-          <CardTitle className="text-xl">
-            <span className="text-primary">{title}</span>
+    <section id={id} className="scroll-mt-20">
+      <Card className="section-card border-none bg-card/50 backdrop-blur-sm">
+        <CardHeader className="flex flex-row items-center gap-3 pb-6">
+          {icon && <span className="text-yellow-400">{icon}</span>}
+          <CardTitle className="text-2xl font-semibold tracking-tight">
+            {title}
           </CardTitle>
         </CardHeader>
-        <CardContent>
+        <CardContent className="pt-2">
           {children}
         </CardContent>
       </Card>

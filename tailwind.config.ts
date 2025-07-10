@@ -15,7 +15,10 @@ const config: Config = {
     },
     extend: {
       colors: {
-        border: 'var(--border)',
+        border: {
+          DEFAULT: 'var(--border)',
+          50: 'color-mix(in srgb, var(--border) 50%, transparent)',
+        },
         input: 'var(--input)',
         ring: 'var(--ring)',
         background: 'var(--background)',
@@ -47,6 +50,7 @@ const config: Config = {
         card: {
           DEFAULT: 'var(--card)',
           foreground: 'var(--card-foreground)',
+          50: 'color-mix(in srgb, var(--card) 50%, transparent)',
         },
       },
       borderRadius: {
