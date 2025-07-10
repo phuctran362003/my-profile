@@ -1,63 +1,48 @@
 "use client";
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Terminal } from 'lucide-react';
 
-const sections = [
-  { id: 'about', label: 'About' },
-  { id: 'skills', label: 'Skills' },
-  { id: 'education', label: 'Education' },
-  { id: 'experience', label: 'Experience' },
-  { id: 'projects', label: 'Projects' },
-  { id: 'contact', label: 'Contact' },
-];
+const Navbar = () => {
+  const navItems = [
+    { href: '#about', label: 'About' },
+    { href: '#skills', label: 'Skills' },
+    { href: '#education', label: 'Education' },
+    { href: '#experience', label: 'Experience' },
+    { href: '#projects', label: 'Projects' },
+    { href: '#contact', label: 'Contact' },
+  ];
 
-export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  
   return (
-    <nav className="border-b border-border bg-background sticky top-0 z-50 py-4">
-      <div className="container max-w-4xl mx-auto flex items-center justify-between px-4">
-        <a href="#" className="font-bold text-lg tracking-tight text-primary">
-          Tran Gia Phuc
-        </a>
-        
-        <div className="hidden md:flex items-center space-x-4">
-          {sections.map((section) => (
-            <a 
-              key={section.id}
-              href={`#${section.id}`}
-              className="text-foreground hover:text-primary transition-colors"
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-sm">
+      <div className="container flex h-14 max-w-4xl items-center">
+        <Link href="/" className="flex items-center gap-2 mr-6">
+          <Terminal className="h-5 w-5 text-primary" />
+          <span className="font-bold text-primary">TGP</span>
+        </Link>
+        <nav className="hidden md:flex flex-1 items-center gap-0.5 text-sm">
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="p-2 hover:text-primary transition-colors relative group"
             >
-              {section.label}
-            </a>
+              {item.label}
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+            </Link>
           ))}
+        </nav>
+        <div className="flex flex-1 items-center justify-end md:flex-none">
+          <Button asChild variant="ghost" size="sm" className="px-3 button-glow">
+            <a href="https://github.com/phuctran362003" target="_blank" rel="noopener noreferrer">
+              Github
+            </a>
+          </Button>
         </div>
-        
-        <Sheet open={isOpen} onOpenChange={setIsOpen}>
-          <SheetTrigger asChild className="md:hidden">
-            <Button variant="outline" size="icon" className="border-primary text-primary">
-              <Menu className="h-4 w-4" />
-            </Button>
-          </SheetTrigger>
-          <SheetContent className="bg-background">
-            <div className="flex flex-col space-y-4 mt-8">
-              {sections.map((section) => (
-                <a 
-                  key={section.id}
-                  href={`#${section.id}`}
-                  onClick={() => setIsOpen(false)}
-                  className="text-foreground hover:text-primary transition-colors"
-                >
-                  {section.label}
-                </a>
-              ))}
-            </div>
-          </SheetContent>
-        </Sheet>
       </div>
-    </nav>
+    </header>
   );
-} 
+};
+
+export default Navbar; 

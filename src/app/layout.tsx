@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import ParticlesBackground from "@/components/ParticlesBackground";
 
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ export default function RootLayout({
     <html lang="vi" className="dark">
       <body className={jetbrainsMono.className}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} forcedTheme="dark">
+          <ParticlesBackground />
           <div className="min-h-screen flex flex-col">
             <Navbar />
             <main className="flex-1 container max-w-4xl mx-auto px-4 py-8">{children}</main>
