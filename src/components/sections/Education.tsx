@@ -1,5 +1,5 @@
 import { Section } from "@/components/ui/section"
-import { GraduationCap, Users } from "lucide-react"
+import { GraduationCap } from "lucide-react"
 
 export function Education() {
   return (
